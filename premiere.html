@@ -1,0 +1,124 @@
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" rel="stylesheet" />
+<style type="text/css">#breadcrumbs {
+        display: none;
+    }
+
+    #placeholder {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<div class="row" id="image">
+<div class="col col-12">
+<h4 class="text-center pt-3 pb-4" id="time">&nbsp;</h4>
+<img alt="" id="placeholder" src="https://www.bishopmoore.org/editoruploads/images/academics/Awards%20Day/Awards-Day-21-Thumb.png" /></div>
+</div>
+
+<div id="video"><iframe allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen="" frameborder="0" height="550px" src="https://www.youtube.com/embed/3Iajsyipw7Q" width="100%"></iframe></div>
+<script>
+    const target = '29 April 2021 18:30:00 GMT-04:00';
+
+    function count_down() {
+        var timeRem = function () {
+            var a = Date.parse(target) - Date.parse(new Date());
+            var b = Math.floor((a / 1000) % 60); //sec
+            var c = Math.floor((a / 1000 / 60) % 60); //min
+            var d = Math.floor((a / (1000 * 60 * 60)) % 24); //hour
+            var e = Math.floor(a / (1000 * 60 * 60 * 24)); //day
+            return new Array(a, b, c, d, e);
+        }();
+
+        var f = function () {
+            if (timeRem[4] == 1) {
+                return " Day, ";
+            } else if (timeRem[4] <= 0) {
+                return "";
+            } else {
+                return " Days, ";
+            }
+        }();
+
+        var g = function () {
+            if (timeRem[3] == 1) {
+                return " Hour, ";
+            } else if (timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "";
+            } else {
+                return " Hours, ";
+            }
+        }();
+
+        var h = function () {
+            if (timeRem[2] == 1) {
+                return " Minute & ";
+            } else if (timeRem[2] <= 0 && timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "";
+            } else {
+                return " Minutes & ";
+            }
+        }();
+
+        var i = function () {
+            if (timeRem[1] == 1) {
+                return " Second";
+            } else if (timeRem[1] <= 0 && timeRem[2] <= 0 && timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "Zero Time";
+            } else {
+                return " Seconds";
+            }
+        }();
+
+        var j = function () {
+            if (timeRem[4] <= 0) {
+                return "";
+            } else {
+                return timeRem[4];
+            }
+        }();
+
+        var k = function () {
+            if (timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "";
+            } else {
+                return timeRem[3];
+            }
+        }();
+
+        var l = function () {
+            if (timeRem[2] <= 0 && timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "";
+            } else {
+                return timeRem[2];
+            }
+        }();
+
+        var m = function () {
+            if (timeRem[1] <= 0 && timeRem[2] <= 0 && timeRem[3] <= 0 && timeRem[4] <= 0) {
+                return "";
+            } else {
+                return timeRem[1];
+            }
+        }();
+
+        document.getElementById("time").innerHTML = "Premieres in " + j + f + k + g + l + h + m + i;
+    }
+
+    function timer_loop() {
+        var currentDate = new Date();
+        if (currentDate >= new Date(target)) {
+            $('#video').removeClass('d-none');
+            $('#image').addClass('d-none');
+        } else {
+            count_down();
+            $('#video').addClass('d-none');
+            $('#image').removeClass('d-none');
+        }
+    }
+
+    $(document).ready(function() {
+        timer_loop()
+        setInterval(timer_loop, 1000);
+    });
+
+</script>
