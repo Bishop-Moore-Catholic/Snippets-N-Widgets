@@ -1,0 +1,235 @@
+<style>
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+
+      width: 300px;
+      height: 200px;
+    }
+
+    .card img {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      width: auto;
+      max-height: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .name {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 1.1em;
+      line-height: 1em;
+    }
+
+    .byline {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .ART {
+      background-color: #f2f3ff;
+    }
+    
+    .ATH {
+      background-color: #fffdf1;
+    }
+
+    .closed, .closed > .byline {
+      background-color: #404040 !important;
+      color: #eeeeee !important;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background: white;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Filter Buttons */
+    .custom-btn {
+      padding: 0 40px 0 40px;
+      font-weight: 500 !important;
+      cursor: pointer;
+      background-color: var(--color-base-2);
+      color: var(--color-overlay-2) !important;
+      border: 2px solid var(--color-base-2);
+      border-radius: 4px;
+      margin: 0;
+      overflow: visible;
+      font: inherit;
+      appearance: none;
+      display: inline-block;
+      box-sizing: border-box;
+      vertical-align: middle;
+      font-size: 1.125rem;
+      line-height: 49px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: none;
+      position: relative;
+    }
+
+    .is-checked {
+      background-color: var(--color-base-1) !important;;
+      color: var(--color-overlay-1) !important;
+      border: 2px solid var(--color-base-1) !important;;
+    }
+
+    @media (max-width: 600px) {
+      .modal-content {
+        margin: 20% auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h4>Filters</h4>
+  <h6>Type</h6>
+  <div class="button-group filter-button-group" data-filter-group="type">
+    <button class="custom-btn is-checked" data-filter="*">All Camps</button>
+    <button class="custom-btn" data-filter=".ART">Arts Camps</button>
+    <button class="custom-btn" data-filter=".ATH">Athletic Camps</button>
+  </div>
+
+  <h6>Time</h6>
+  <div class="button-group filter-button-group" data-filter-group="time">
+    <button class="custom-btn is-checked" data-filter="*">Any Time</button>
+    <button class="custom-btn" data-filter=".AM">Morning Session</button>
+    <button class="custom-btn" data-filter=".PM">Afternoon Session</button>
+  </div>
+
+<!-- Week 1 -->
+<h3>Week 1: June 30 - July 3</h3>
+<div class="grid">
+  <div class="card PM ATH closed" data="showModal('bio01')">
+    <div class="name">Dance</div>
+    <div class="byline">5th-9th Grade</div>
+    <div class="byline">1:00 PM - 4:00 PM</div>
+    <div class="byline">Location: Cheer Gym</div>
+    <div class="byline">REGISTRATION CLOSED</div>
+  </div>
+
+</div>
+
+<!-- Week 2 -->
+<h3>Week 2: July 7-10</h3>
+<div class="grid">
+  
+  <div class="card PM ART" onclick="showModal('bio02')">
+    <div class="name">2D Art - Mixed Media</div>
+    <div class="byline">5th-9th Grade</div>
+    <div class="byline">1:00 PM - 4:00 PM</div>
+    <div class="byline">Location: Art Room</div>
+  </div>
+  
+</div>
+
+<!-- Modals -->
+  
+<!-- Week 1-->
+<div id="bio01" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="hideModal('bio01')">&times;</span>
+    <h3>Dance</h3>
+    <p>5th-9th Grade<br>1:00 PM - 4:00 PM<br>Location: Cheer Gym</p>
+    <a href="#" target="_blank" class="button">Register</a>
+  </div>
+</div>
+  
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<script>
+  function showModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function hideModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Optional: Close modal if user clicks outside the content
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  };
+</script>
+<script>
+  // init Isotope
+  var $grid = $('.grid').isotope({
+    itemSelector: '.card',
+    layoutMode: 'fitRows'
+  });
+  var filters = {};
+  // filter items on button click
+  $('.filter-button-group').on( 'click', 'button', function() {
+    var $this = $(this);
+    // get group key
+    var $buttonGroup = $this.parents('.button-group');
+    var filterGroup = $buttonGroup.attr('data-filter-group');
+    // set filter for group
+    filters[ filterGroup ] = $this.attr('data-filter');
+    // combine filters
+    var filterValue = concatValues( filters );
+    $grid.isotope({ filter: filterValue });
+  });
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function( event ) {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      var $button = $( event.currentTarget );
+      $button.addClass('is-checked');
+    });
+  });
+  // flatten object by concatting values
+  function concatValues( obj ) {
+    var value = '';
+    for ( var prop in obj ) {
+      value += obj[ prop ];
+    }
+    return value;
+  }
+</script>
