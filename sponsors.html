@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsor Grid</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+      justify-content: center;
+    }
+
+    .grid-item {
+      flex: 1 1 calc(15% - 50px);
+      max-width: calc(15% - 50px);
+      aspect-ratio: 1 / 1; /* Keeps aspect ratio for background images */
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1024px) {
+      .grid-item {
+        flex: 1 1 calc(33.33% - 32px);
+        max-width: calc(33.33% - 32px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-item {
+        flex: 1 1 calc(50% - 32px);
+        max-width: calc(50% - 32px);
+      }
+    }
+
+    /* @media (max-width: 480px) {
+      .grid-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    } */
+
+  </style>
+</head>
+<body>
+
+  <h3 style="text-align: center;">Platinum Sponsors</h3>
+  <div class="image-grid" id="level1"></div>
+
+  <h3 style="text-align: center;">Gold Sponsors</h3>
+  <div class="image-grid" id="level2"></div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const data = [
+      {
+        link: "page1.html",
+        image: "images/image1.jpg",
+        grid: "level1"
+      },
+      {
+        link: "page2.html",
+        image: "images/image2.jpg",
+        grid: "level2"
+      }
+
+    ];
+
+    const $grid = $('.image-grid');
+
+    data.forEach(item => {
+      const $element = $(`
+        <a href="${item.link}" target="_blank" class="grid-item" style="background-image: url('${item.image}');"></a>
+      `);
+      $(`#${item.grid}`).append($element);
+    });
+  });
+</script>
+</html>
