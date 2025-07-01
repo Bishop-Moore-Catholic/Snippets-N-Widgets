@@ -1,127 +1,186 @@
-<!-- FALL -->>
-<figure class="image image-style-align-left" style="width:300px; margin-top:20px">
-    <a href="/teams/black-gold-brigade.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Band.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/Band_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/Band.png';"></a>
-</figure>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Image Grid with Hover Effects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/bowling.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Bowling.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/Bowling_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/Bowling.png';"></a>
-</figure>
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+      justify-content: center;
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/unified-bowling.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/UnifiedBowl.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedBowl_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedBowl.png';"></a>
-</figure>
+    .grid-item {
+      flex: 1 1 calc(25% - 32px);
+      max-width: calc(25% - 32px);
+      text-decoration: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/color-guard.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/ColorGaurd.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/ColorGaurd_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/ColorGaurd.png';"></a>
-</figure>
+    .grid-item:hover {
+      transform: scale(1.03);
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/cheer.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Cheer.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/Cheer_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/Cheer.png';"></a>
-</figure>
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/cross-country.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/XC.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/XC_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/XC.png';"></a>
-</figure>
+    /* Responsive breakpoints */
+    @media (max-width: 1024px) {
+      .grid-item {
+        flex: 1 1 calc(33.33% - 32px);
+        max-width: calc(33.33% - 32px);
+      }
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/football.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Football.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/Football_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/Football.png';"></a>
-</figure>
+    @media (max-width: 768px) {
+      .grid-item {
+        flex: 1 1 calc(50% - 32px);
+        max-width: calc(50% - 32px);
+      }
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-golf.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BoysGolf.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BoysGolf_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BoysGolf.png';"></a>
-</figure>
+    @media (max-width: 480px) {
+      .grid-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-golf.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsGolf.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GirlsGolf_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GirlsGolf.png';"></a>
-</figure>
+  </style>
+</head>
+<body>
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/swim-dive.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SwimandDive.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/SwimandDive_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/SwimandDive.png';"></a>
-</figure>
+  <h3 style="text-align: center;">Fall Sports</h3>
+  <div class="image-grid">
+    <a href="/teams/black-gold-brigade.cfm" class="grid-item girl boy">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Band.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Band_1.jpg" alt="Band">
+    </a>
+    <a href="/teams/bowling.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Bowling.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Bowling_1.jpg" alt="Bowling">
+    </a>
+    <a href="/teams/cheer.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Cheer.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Cheer_1.jpg" alt="Cheer">
+    </a>
+    <a href="/teams/cross-country.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/XC.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/XC_1.jpg" alt="Cross Country">
+    </a>
+    <a href="/teams/football.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Football.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Football_1.jpg" alt="Football">
+    </a>
+    <a href="/teams/boys-golf.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BoysGolf.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BoysGolf.jpg" alt="Boys Golf">
+    </a>
+    <a href="/teams/girls-golf.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsGolf.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsGolf_1.jpg" alt="Girls Golf">
+    </a>
+    <a href="/teams/girls-golf.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SwimandDive.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SwimandDive_1.jpg" alt="Swim and Dive">
+    </a>
+    <a href="/teams/girls-volleyball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsVolley.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsVolley_1.jpg" alt="Girls Volleyball">
+    </a>
+  </div>
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-volleyball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GirlsVolley.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GirlsVolley_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GirlsVolley.png';"></a>
-</figure>
+  <h3 style="text-align: center;">Winter Sports</h3>
+  <div class="image-grid">
+    <a href="/teams/boys-basketball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BBB.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BBB_1.jpg" alt="Boys Basketball">
+    </a>
+    <a href="/teams/girls-basketball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GBB.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GBB_1.jpg" alt="Girls Basketball">
+    </a>
+    <a href="/teams/competition-cheer.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/COMPCHEER.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/COMPCHEER_1.jpg" alt="Competition Cheer">
+    </a>
+    <a href="/teams/dance.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/DANCE.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/DANCE_1.jpg" alt="Dance">
+    </a>
+    <a href="/teams/boys-soccer.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BSOCCER.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BSOCCER_1.jpg" alt="Boys Soccer">
+    </a>
+    <a href="/teams/girls-soccer.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GSOCCER.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GSOCCER_1.jpg" alt="Girls Soccer">
+    </a>
+    <a href="/teams/girls-weightlifting.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GWEIGHT.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GWEIGHT_1.jpg" alt="Girls Weightlifting">
+    </a>
+    <a href="/teams/boys-wrestling.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WRESTLING.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WRESTLING_1.jpg" alt="Boys Wrestling">
+    </a>
+  </div>
 
-<!-- WINTER -->
-<figure class="image image-style-align-left" style="width:300px; margin-top:20px">
-    <a href="/teams/boys-basketball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BBB.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BBB_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BBB.png';"></a>
-</figure>
+  <h3 style="text-align: center;">Spring Sports</h3>
+  <div class="image-grid">
+    <a href="/teams/baseball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BASEBALL.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BASEBALL_1.jpg" alt="Baseball">
+    </a>
+    <a href="/teams/flag-football.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/FLAG.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/FLAG_1.jpg" alt="Flag Football">
+    </a>
+    <a href="/teams/boys-lacrosse.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BLAX.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BLAX_1.jpg" alt="Boys Lacrosse">
+    </a>
+    <a href="/teams/girls-lacrosse.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GLAX.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GLAX_1.jpg" alt="Girls Lacrosse">
+    </a>
+    <a href="/teams/softball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SOFTBALL.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SOFTBALL_1.jpg" alt="Softball">
+    </a>
+    <a href="/teams/tennis.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TENNIS.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TENNIS_1.jpg" alt="Tennis">
+    </a>
+    <a href="/teams/track-field.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TRACK.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TRACK_1.jpg" alt="Track and Field">
+    </a>
+    <a href="/teams/boys-volleyball.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BVOLLEY.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BVOLLEY_1.jpg" alt="Boys Volleyball">
+    </a>
+    <a href="/teams/water-polo.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WATERPOLO.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WATERPOLO_1.jpg" alt="Water Polo">
+    </a>
+    <a href="/teams/boys-weightlifting.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BWEIGHT.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BWEIGHT_1.jpg" alt="Boys Weightlifting">
+    </a>
+  </div>
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-basketball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GBB.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GBB_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GBB.png';"></a>
-</figure>
+  <h3 style="text-align: center;">Unified Sports</h3>
+  <div class="image-grid">
+    <a href="/teams/unified-sports.cfm" class="grid-item">
+      <img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Unified.jpg" data-hover="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/Unified_1.jpg" alt="">
+    </a>
+  </div>
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/unified-basketball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/UnifiedBB.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedBB_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedBB.png';"></a>
-</figure>
+  <script>
+    // Simple JS to handle image hover swap
+    const images = document.querySelectorAll('.grid-item img');
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/competition-cheer.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/COMPCHEER.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/COMPCHEER_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/COMPCHEER.png';"></a>
-</figure>
+    images.forEach(img => {
+      const originalSrc = img.src;
+      const hoverSrc = img.getAttribute('data-hover');
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/dance.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/DANCE.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/DANCE_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/DANCE.png';"></a>
-</figure>
+      img.addEventListener('mouseover', () => {
+        img.src = hoverSrc;
+      });
 
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-soccer.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BSOCCER.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BSOCCER_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BSOCCER.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-soccer.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GSOCCER.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GSOCCER_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GSOCCER.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-weightlifting.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GWEIGHT.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GWEIGHT_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GWEIGHT.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-wrestling.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WRESTLING.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/WRESTLING_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/WRESTLING.png';"></a>
-</figure>
-
-<!-- SPRING -->
-<figure class="image image-style-align-left" style="width:300px; margin-top:20px">
-    <a href="/teams/baseball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BASEBALL.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BASEBALL_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BASEBALL.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/flag-football.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/FLAG.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/FLAG_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/FLAG.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-lacrosse.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BLAX.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BLAX_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BLAX.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/girls-lacrosse.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/GLAX.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/GLAX_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/GLAX.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/softball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/SOFTBALL.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/SOFTBALL_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/SOFTBALL.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/tennis.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TENNIS.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/TENNIS_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/TENNIS.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/track-field.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/TRACK.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/TRACK_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/TRACK.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/unified-track-field.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/UnifiedTrack.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedTrack_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/UnifiedTrack.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-volleyball.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BVOLLEY.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BVOLLEY_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BVOLLEY.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/water-polo.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/WATERPOLO.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/WATERPOLO_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/WATERPOLO.png';"></a>
-</figure>
-
-<figure class="image image-style-align-left" style="width:300px;">
-    <a href="/teams/boys-weightlifting.cfm" target="_self"><img src="https://www.bishopmoore.org/editoruploads/images/Athletics/Team%20Icons/BWEIGHT.png" onmouseover="this.src='/editoruploads/images/Athletics/Team%20Icons/BWEIGHT_1.png';" onmouseout="this.src='/editoruploads/images/Athletics/Team%20Icons/BWEIGHT.png';"></a>
-</figure>
-
+      img.addEventListener('mouseout', () => {
+        img.src = originalSrc;
+      });
+    });
+  </script>
+</body>
+</html>
