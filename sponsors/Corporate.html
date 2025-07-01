@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsor Grid</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 16px;
+      justify-content: center;
+    }
+
+    .grid-item {
+      flex: 1 1 calc(15% - 30px);
+      max-width: calc(15% - 30px);
+      aspect-ratio: 1 / 1; /* Keeps aspect ratio for background images */
+      background-color: white;
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1024px) {
+      .grid-item {
+        flex: 1 1 calc(33.33% - 32px);
+        max-width: calc(33.33% - 32px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .grid-item {
+        flex: 1 1 calc(50% - 32px);
+        max-width: calc(50% - 32px);
+      }
+    }
+
+    /* @media (max-width: 480px) {
+      .grid-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    } */
+
+  </style>
+</head>
+<body>
+  
+  <div class="image-grid"></div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const data = [
+      {
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_01.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_02.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_03.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_04.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_05.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_06.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_07.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_08.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_09.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_10.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_11.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_12.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_13.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_14.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_15.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_16.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_17.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_18.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_19.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_20.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_21.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_22.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_23.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_24.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_25.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_26.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_27.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_28.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_29.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_30.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_31.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_32.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_33.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_35.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_36.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_37.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_38.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_39.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_40.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_41.jpg"
+      },{
+        link: "#",
+        image: "https://www.bishopmoore.org/editoruploads/images/sponsors/Corp/c_42.jpg"
+      }
+    ];
+
+    const $grid = $('.image-grid');
+
+    data.forEach(item => {
+      const $element = $(`
+        <a href="${item.link}" class="grid-item" style="background-image: url('${item.image}');"></a>
+      `);
+       $grid.append($element);
+    });
+  });
+</script>
+</html>
