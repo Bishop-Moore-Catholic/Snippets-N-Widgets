@@ -233,3 +233,63 @@
     return value;
   }
 </script>
+<script>
+  /**
+   * Schedule week closure and hiding using JavaScript Date
+   * @param {string} weekHeaderText - e.g., "Week 2: July 7-10"
+   * @param {string} closeTimeStr - ISO 8601 or valid date string (e.g., "2025-07-10T17:00:00")
+   * @param {string} hideTimeStr - ISO 8601 or valid date string (e.g., "2025-07-11T00:00:00")
+   */
+  function scheduleWeekClosure(weekHeaderText, closeTimeStr, hideTimeStr) {
+    const header = Array.from(document.querySelectorAll('h3')).find(h3 => h3.textContent.trim() === weekHeaderText);
+    if (!header) return;
+
+    const grid = header.nextElementSibling;
+    if (!grid || !grid.classList.contains('grid')) return;
+
+    const now = new Date();
+    const closeTime = new Date(closeTimeStr);
+    const hideTime = new Date(hideTimeStr);
+
+    const msUntilClose = closeTime - now;
+    const msUntilHide = hideTime - now;
+
+    const closeCards = () => {
+      grid.querySelectorAll('.card').forEach(card => {
+        card.classList.add('closed');
+        card.setAttribute('onclick', 'javascript:void(0);');
+
+        // Check if the REGISTRATION CLOSED message is already there
+        const alreadyAppended = Array.from(card.children).some(child =>
+          child.textContent.includes('REGISTRATION CLOSED')
+        );
+        if (!alreadyAppended) {
+          const closedMsg = document.createElement('div');
+          closedMsg.className = 'byline';
+          closedMsg.innerHTML = '<strong>REGISTRATION CLOSED</strong>';
+          card.appendChild(closedMsg);
+        }
+      });
+    };
+
+    if (msUntilClose > 0) {
+      setTimeout(closeCards, msUntilClose);
+    } else {
+      closeCards();
+    }
+
+    if (msUntilHide > 0) {
+      setTimeout(() => {
+        grid.style.display = 'none';
+      }, msUntilHide);
+    } else {
+      grid.style.display = 'none';
+    }
+  }
+
+  // 🗓️ Example usage:
+  scheduleWeekClosure('Week 2: July 7-10', '2025-07-06T21:00:00-04:00', '2025-07-07T12:00:00-04:00');
+  scheduleWeekClosure('Week 3: July 14-17', '2025-07-13T21:00:00-04:00', '2025-07-14T12:00:00-04:00');
+  scheduleWeekClosure('Week 4: July 21-24', '2025-07-20T21:00:00-04:00', '2025-07-21T12:00:00-04:00');
+  scheduleWeekClosure('Week 5: July 28-31', '2025-07-30T21:00:00-04:00', '2025-07-31T12:00:00-04:00');
+</script>
