@@ -281,13 +281,14 @@
     if (msUntilHide > 0) {
       setTimeout(() => {
         grid.style.display = 'none';
+        header.style.display = 'none';
       }, msUntilHide);
     } else {
       grid.style.display = 'none';
+      header.style.display = 'none';
     }
   }
-
-  // 🗓️ Example usage:
+    
   scheduleWeekClosure('Week 2: July 7-10', '2025-07-06T21:00:00-04:00', '2025-07-07T12:00:00-04:00');
   scheduleWeekClosure('Week 3: July 14-17', '2025-07-13T21:00:00-04:00', '2025-07-14T12:00:00-04:00');
   scheduleWeekClosure('Week 4: July 21-24', '2025-07-20T21:00:00-04:00', '2025-07-21T12:00:00-04:00');
