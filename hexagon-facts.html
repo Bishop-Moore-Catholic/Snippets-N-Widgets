@@ -1,0 +1,148 @@
+<style>
+  :root{
+    --bg:#ffffff;          /* near-black panel */
+    --text:#000000;        /* white text */
+    --muted:#dddddd;       /* light body copy */
+  }
+
+  .about-bmc{
+    background: var(--bg);
+    color: var(--text);
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 28px 28px 32px;
+  }
+
+  /* Header */
+  .about-divider{
+    height: 3px;
+    background: var(--muted);
+    margin: 10px 0 22px;
+    opacity: .7;
+  }
+
+  /* Grid of fact rows */
+  .facts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 36px;
+  }
+
+  .fact{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+
+  /* Regular, equal-sided hex-factagon (flat-top) */
+  .hex-fact{
+    width: 100px;                    /* control size */
+    aspect-ratio: 1 / 0.8660254;    /* = width / (width*√3/2) */
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    background: var(--color-base-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;                    /* dark text inside gold */
+    font-weight: 800;
+    text-align: center;
+    padding: 6px;
+  }
+  .hex-fact .num{ font-size: 28px; line-height: 1; }
+
+  .fact h6{
+    margin: 0 0 6px 0;
+    color:ar(--color-base-1);
+    text-transform: uppercase !important;
+    font-weight: 800 !important;
+    font-size: 20px;
+  }
+  .fact p{
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px){
+    .facts{ grid-template-columns: 1fr; }
+  }
+</style>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<section class="about-bmc" aria-labelledby="about-fine-arts">
+  <h3 style="text-align: center;">About The Fine Arts at BMC</h3>
+
+  <div class="about-divider" role="presentation"></div>
+
+  <div class="facts">
+
+    <!-- 40 Elective Courses -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="40">
+        <span class="num">40</span>
+      </div>
+      <div>
+        <h6>Elective Courses</h6>
+        <p>Including 3D Art, Creative Photography, Musical Theatre, and Dance Techniques.</p>
+      </div>
+    </article>
+
+    <!-- 8 Student Organizations & Clubs -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="8">
+        <span class="num">8</span>
+      </div>
+      <div>
+        <h6>Student Organizations &amp; Clubs</h6>
+        <p>Including BMC String Orchestra, Storytellers Society, and Tri-M Music Honor Society.</p>
+      </div>
+    </article>
+
+    <!-- 100% Engagement -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="100 percent">
+        <span class="num">100%</span>
+      </div>
+      <div>
+        <h6>Engagement</h6>
+        <p>Every student at Bishop Moore Catholic is required to take one arts elective.</p>
+      </div>
+    </article>
+
+    <!-- 4 AP & Honor Societies -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="4">
+        <span class="num">4</span>
+      </div>
+      <div>
+        <h6>Advanced Placement Courses and Honor Societies</h6>
+        <p>In the areas of Visual Arts, Art History, and Music.</p>
+      </div>
+    </article>
+
+    <!-- 13 Performances -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="13">
+        <span class="num">13</span>
+      </div>
+      <div>
+        <h6>Performances</h6>
+        <p>Including a fall and spring theatre production, a Christmas choir concert, and a Spring Band Concert.</p>
+      </div>
+    </article>
+
+    <!-- 12 Faculty & Assistants -->
+    <article class="fact">
+      <div class="hex-fact" role="img" aria-label="12">
+        <span class="num">12</span>
+      </div>
+      <div>
+        <h6>Faculty and Assistants</h6>
+        <p>Our arts department faculty are a remarkable group of educators who inspire creativity and foster a nurturing environment for students to explore and grow their artistic abilities.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
