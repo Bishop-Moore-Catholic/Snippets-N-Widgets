@@ -1,0 +1,394 @@
+<style>
+  :root{
+    --diamond:#bfbfbf;
+    --platinum:#a8a8a8;
+    --gold:#c9a245;
+    --black:#333333;
+    --patron:#e8dfcf;
+  }
+
+  .membership-levels{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+
+  .level{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Hexagon badge */
+  .hex{
+    width: 140px;
+    aspect-ratio: 1 / 0.8660254;   /* = width / (width*√3/2) */
+    clip-path: polygon(
+      25% 0%, 75% 0%,
+      100% 50%,
+      75% 100%, 25% 100%,
+      0% 50%
+    );
+    display: grid;
+    place-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px;
+    margin-left: 8px;
+  }
+  .hex small{display:block;opacity:.95;letter-spacing:.5px}
+  .hex .amount{font-size:24px;font-weight:700;line-height:1.1}
+  .hex .tier{font-weight:700;margin-top:4px}
+  .hex .label{font-size:12px;margin-top:2px;opacity:.9}
+
+  /* Colors per tier */
+  .diamond .hex{ background: var(--diamond); color:#000;}
+  .platinum .hex{ background: var(--platinum); color:#000;}
+  .gold .hex{ background: var(--gold); color:#ffffff;}
+  .black .hex{ background: var(--black); color:#ffffff;}
+  .patron .hex{ background: var(--patron); color:#000;}
+
+  .benefits ul{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .benefits li{ margin: 6px 0; }
+
+  @media (max-width: 680px){
+    .level{
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .hex{ margin: 0 auto; }
+    .benefits h6{ text-align:center; }
+  }
+</style>
+
+<div class="membership-levels">
+
+  <!-- $1000 Diamond -->
+  <section class="level diamond" aria-label="$1000 Diamond Level">
+    <div class="hex" role="img" aria-label="$1000 · Diamond · Level">
+      <span class="amount">$1000</span>
+      <span class="tier">DIAMOND</span>
+      <small class="label">LEVEL</small>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>Annual member mug and Partners magnet</li>
+        <li>Recognition on BMC website, social media, and playbill</li>
+        <li>Four (4) free tickets to Spring &amp; Fall production</li>
+        <li>Reserved seating at all BMC performances</li>
+        <li>Pre-show VIP receptions for Spring &amp; Fall production</li>
+        <li>VIP entry to Art Show</li>
+        <li>Spirit Store voucher $40</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $550 Platinum -->
+  <section class="level platinum" aria-label="$550 Platinum Level">
+    <div class="hex" role="img" aria-label="$550 · Platinum · Level">
+      <span class="amount">$550</span>
+      <span class="tier">PLATINUM</span>
+      <small class="label">LEVEL</small>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>Annual member mug and Partners magnet</li>
+        <li>Recognition on BMC website, social media, and playbill</li>
+        <li>Two (2) free tickets to Spring &amp; Fall production</li>
+        <li>Reserved seating at all BMC performances</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $350 Gold -->
+  <section class="level gold" aria-label="$350 Gold Level">
+    <div class="hex" role="img" aria-label="$350 · Gold · Level">
+      <span class="amount">$350</span>
+      <span class="tier">GOLD</span>
+      <small class="label">LEVEL</small>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>Annual member mug and Partners magnet</li>
+        <li>Recognition on BMC website, social media, and playbill</li>
+        <li>Reserved seating at all BMC performances</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $200 Black -->
+  <section class="level black" aria-label="$200 Black Level">
+    <div class="hex" role="img" aria-label="$200 · Black · Level">
+      <span class="amount">$200</span>
+      <span class="tier">BLACK</span>
+      <small class="label">LEVEL</small>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>Annual member mug and Partners magnet</li>
+        <li>Recognition on BMC website, social media, and playbill</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $100 Patron -->
+  <section class="level patron" aria-label="$100 Patron Level">
+    <div class="hex" role="img" aria-label="$100 · Patron · Level">
+      <span class="amount">$100</span>
+      <span class="tier">PATRON</span>
+      <small class="label">LEVEL</small>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>Partners magnet</li>
+        <li>Recognition on BMC website, social media, and playbill</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+
+<!-- ### -->
+<!-- ### -->
+<!-- ### -->
+
+
+<style>
+  :root{
+    --card-bg: #e8dfcf;   /* light gold-beige */
+  }
+
+  .sponsor-top{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 8px;
+  }
+
+  .sponsor-top h4{
+    text-align: center;
+    margin: 0 0 16px;
+    letter-spacing: .5px;
+  }
+
+  .perk-grid{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .perk-card{
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 14px;
+    min-height: 90px;   /* fixed height for uniformity */
+  }
+
+  .perk-card span{
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 380px){
+    .perk-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="sponsor-top" aria-labelledby="sponsor-includes">
+  <h4 id="sponsor-includes">All Sponsorship Levels Include:</h4>
+
+  <div class="perk-grid" role="list">
+    <div class="perk-card" role="listitem">
+      <span>Tickets to all shows and performances</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Program recognition — all productions and performances</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Pre-show VIP receptions</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>VIP entry to art show</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Autographed show poster</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Spirit store voucher</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Logo on BMC website, social media, programs, and lobby signage</span>
+    </div>
+    <div class="perk-card" role="listitem">
+      <span>Partners in the Arts car magnet</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  :root{
+    /* Hex colors approximated from your image */
+    --encore:#3a3a3a;     /* dark charcoal */
+    --spotlight:#8b7e78;  /* taupe/muted mauve */
+    --producer:#c6a24a;   /* gold */
+    --director:#d8c6a6;   /* sand/tan */
+    --artiste:#e9e0d3;    /* light beige */
+  }
+
+  .levels{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+
+  .level{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  /* Regular, equal-sided hexagon (flat-top) */
+  .hex{
+    width: 140px;                    /* control size */
+    aspect-ratio: 1 / 0.8660254;     /* = width / (width*√3/2) */
+    clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    color: #fff;
+  }
+  .hex .amount{font-weight:700; font-size:22px; line-height:1.1;}
+  .hex .tier{font-weight:700; font-size:14px; margin-top:2px;}
+  .hex .label{font-size:10px; margin-top:2px; opacity:.95;}
+
+  /* Colors per level */
+  .encore   .hex{ background: var(--encore); }
+  .spotlight .hex{ background: var(--spotlight); }
+  .producer .hex{ background: var(--producer); }
+  .director .hex{ background: var(--director); color:#333; }
+  .artiste  .hex{ background: var(--artiste); color:#333; }
+
+  .benefits ul{ margin:0; padding-left:18px; }
+  .benefits li{ margin:6px 0; }
+
+  @media (max-width: 680px){
+    .level{
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .hex{ margin: 0 auto; }
+    .benefits h6{ text-align:center; }
+  }
+</style>
+
+<div class="levels">
+
+  <!-- $10,000 Encore Sponsor -->
+  <section class="level encore" aria-label="$10,000 Encore Sponsor">
+    <div class="hex" role="img" aria-label="$10,000 · Encore · Sponsor">
+      <div class="amount">$10,000</div>
+      <div class="tier">ENCORE</div>
+      <div class="label">SPONSOR</div>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>(4) VIP seating tickets to Fall &amp; Spring Theatre Productions at Dr. Phillips Pugh Theatre</li>
+        <li>Back cover advertisement in play programs</li>
+        <li>Reserved seating at all BMC performances (theatre, band, choir, classical music)</li>
+        <li>Director’s speech recognition</li>
+        <li>Logo on show posters and name recognition on play program</li>
+        <li>Digital ad on Jumbotron, Gym, and Baseball scoreboards</li>
+        <li>$250 Spirit Store voucher</li>
+        <li>EXCLUSIVE sponsorship — only one available</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $7,500 Spotlight Sponsor -->
+  <section class="level spotlight" aria-label="$7,500 Spotlight Sponsor">
+    <div class="hex" role="img" aria-label="$7,500 · Spotlight · Sponsor">
+      <div class="amount">$7,500</div>
+      <div class="tier">SPOTLIGHT</div>
+      <div class="label">SPONSOR</div>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>(4) tickets to Fall &amp; Spring Theatre Productions at Dr. Phillips Pugh Theatre</li>
+        <li>Full page, premium placement advertisement in play programs</li>
+        <li>Reserved seating at all BMC performances (theatre, band, choir, classical music)</li>
+        <li>Logo displayed at VIP receptions</li>
+        <li>Digital ad on Jumbotron, Gym, and Baseball scoreboards</li>
+        <li>$150 Spirit Store voucher</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $5,000 Producer Sponsor -->
+  <section class="level producer" aria-label="$5,000 Producer Sponsor">
+    <div class="hex" role="img" aria-label="$5,000 · Producer · Sponsor">
+      <div class="amount">$5,000</div>
+      <div class="tier">PRODUCER</div>
+      <div class="label">SPONSOR</div>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>(4) tickets to Fall &amp; Spring Theatre Productions at Dr. Phillips Pugh Theatre</li>
+        <li>Full page, premium placement advertisement in play programs</li>
+        <li>Reserved seating at all BMC performances (theatre, band, choir, classical music)</li>
+        <li>Digital ad on Jumbotron, Gym, and Baseball scoreboards</li>
+        <li>$100 Spirit Store voucher</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $2,500 Director Sponsor -->
+  <section class="level director" aria-label="$2,500 Director Sponsor">
+    <div class="hex" role="img" aria-label="$2,500 · Director · Sponsor">
+      <div class="amount">$2,500</div>
+      <div class="tier">DIRECTOR</div>
+      <div class="label">SPONSOR</div>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>(4) tickets to Fall &amp; Spring Theatre Productions at Dr. Phillips Pugh Theatre</li>
+        <li>Full page advertisement in play programs</li>
+        <li>Reserved seating at all BMC performances (theatre, band, choir, classical music)</li>
+        <li>$50 Spirit Store voucher</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- $1,500 Artiste Sponsor -->
+  <section class="level artiste" aria-label="$1,500 Artiste Sponsor">
+    <div class="hex" role="img" aria-label="$1,500 · Artiste · Sponsor">
+      <div class="amount">$1,500</div>
+      <div class="tier">ARTISTE</div>
+      <div class="label">SPONSOR</div>
+    </div>
+    <div class="benefits">
+      <ul>
+        <li>(2) tickets to Fall &amp; Spring Theatre Productions at Dr. Phillips Pugh Theatre</li>
+        <li>1/2 page advertisement in play programs</li>
+        <li>Reserved seating at all BMC performances (theatre, band, choir, classical music)</li>
+        <li>$40 Spirit Store voucher</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
