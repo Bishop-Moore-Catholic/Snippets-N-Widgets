@@ -1,0 +1,248 @@
+<style>
+.advancement-team {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  position: relative;
+}
+
+.advancement-team h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* --- Timeline container and center line --- */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem 0;
+  --line-color: #ccc;
+  --overlap: -150px; /* negative = overlap */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: var(--line-color);
+  transform: translateX(-50%);
+}
+
+/* --- Individual team members --- */
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 50%;
+  padding: 0.75rem 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.team-member + .team-member {
+  margin-top: var(--overlap);
+}
+
+.team-member img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: top;
+  flex-shrink: 0;
+}
+
+/* Positioning left/right */
+.team-member.left {
+  justify-content: flex-start;
+  text-align: right;
+  left: 0;
+}
+
+.team-member.right {
+  justify-content: flex-start;
+  text-align: left;
+  left: 50%;
+}
+
+/* Connector dots */
+.team-member::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 3px solid var(--line-color);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.team-member.left::before {
+  right: -8px;
+}
+
+.team-member.right::before {
+  left: -8px;
+}
+
+.info {
+  max-width: 360px;
+}
+
+.role {
+  font-weight: bold;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+.hide-mobile {
+        display: block;
+    }
+    .hide-desktop {
+        display: none;
+    }
+
+/* --- Responsive: collapse to one left column, hide line & dots --- */
+@media (max-width: 1024px) {
+    
+    .hide-mobile {
+        display: none;
+    }
+    .hide-desktop {
+        display: block;
+    }
+  .timeline::before {
+    display: none; /* Hide center line */
+  }
+
+  .team-member {
+    width: 100%;
+    left: 0 !important;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left !important;
+    padding: 0.75rem 0;
+    margin-top: 0.75rem;
+  }
+
+  .team-member + .team-member {
+    margin-top: 30px;
+    }
+
+  .team-member::before {
+    display: none; /* Hide connector dots */
+  }
+
+  .team-member img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+</style>
+
+<section class="advancement-team">
+  <h2>Meet the Advancement Team</h2>
+
+  <div class="timeline">
+    <div class="team-member left">
+    <img src="https://www.bishopmoore.org/staff136_6.jpg" alt="Tanya Starrett" class="hide-desktop">
+      <div class="info">
+        <h3>Tanya Starrett '01</h3>
+        <p class="role">Director of Advancement</p>
+        <p>Tanya collaborates with the entire leadership team and is responsible for all aspects of fundraising including the Annual Fund, Major Gifts, Special Events, Endowments, Grants, Capital Campaign, and Communication.</p>
+      </div>
+      <img src="https://www.bishopmoore.org/staff136_6.jpg" alt="Tanya Starrett" class="hide-mobile">
+    </div>
+
+     <div class="team-member right">
+      <img src="https://www.bishopmoore.org/staff145_5.jpg" alt="Kelly Carbone">
+      <div class="info">
+        <h3>Kelly Carbone</h3>
+        <p class="role">Corporate Partnership & Data Manager</p>
+        <p>Kelly develops strategic corporate relationships and oversees the integrity and use of data for advancement including identifying and securing new partners, managing partnerships, and ensuring data quality and governance.</p>
+      </div>
+    </div>
+
+    <div class="team-member left">
+      <img src="https://www.bishopmoore.org/editoruploads/files/Give/Team/Fable_Genevieve.JPG" alt="Genevieve Fable" class="hide-desktop">
+        <div class="info">
+        <h3>Genevieve Fable</h3>
+        <p class="role">Creative Director</p>
+        <p>Genna provides vision and leadership for all creative and branding initiatives, including marketing, communications, and storytelling while shaping the visual identity to align with our mission and engage the community.</p>
+      </div>
+      <img src="https://www.bishopmoore.org/editoruploads/files/Give/Team/Fable_Genevieve.JPG" alt="Genevieve Fable" class="hide-mobile">
+    </div>
+
+    <div class="team-member right">
+      <img src="https://www.bishopmoore.org/editoruploads/files/Give/Team/Luter_Sarah.JPG" alt="Sarah Luter">
+      <div class="info">
+        <h3>Sarah Luter</h3>
+        <p class="role">Director of Communications</p>
+        <p>Sarah develops and implements strategic plans to manage internal and external messaging, brand image, and public relations efforts through websites and social media, analyzing communication metrics to inform future strategies.</p>
+      </div>
+    </div>
+
+    <div class="team-member left">
+      <img src="https://www.bishopmoore.org/staff138_5.jpg" alt="Mike Malatesta" class="hide-desktop">
+      <div class="info">
+        <h3>Mike Malatesta '71</h3>
+        <p class="role">Director of Alumni Relations</p>
+        <p>Mike develops and executes strategies to maintain strong, engaged relationships between BMC and its alumni by managing events, donor cultivation, and community engagement that support our mission.</p>
+      </div>
+      <img src="https://www.bishopmoore.org/staff138_5.jpg" alt="Mike Malatesta" class="hide-mobile">
+    </div>
+
+    <div class="team-member right">
+      <img src="https://www.bishopmoore.org/staff523_5.jpg" alt="Tony Mehlich">
+      <div class="info">
+        <h3>Tony Mehlich '03</h3>
+        <p class="role">Advancement Officer</p>
+        <p>Tony builds relationships and raises funds by managing a portfolio of donors, identifying prospects, and soliciting gifts with a focus on cultivation, stewardship, and achieving fundraising goals.</p>
+      </div>
+    </div>
+
+    <div class="team-member left">
+      <img src="https://www.bishopmoore.org/staff859_1.jpg" alt="Lane Nicolay" class="hide-desktop">
+      <div class="info">
+        <h3>Lane Nicolay</h3>
+        <p class="role">Advancement Support Specialist</p>
+        <p>Lane provides crucial administrative, database management, and communication support for BMC’s fundraising and advancement efforts, focusing on donor data, gift processing, and stewardship activities.</p>
+      </div>
+      <img src="https://www.bishopmoore.org/staff859_1.jpg" alt="Lane Nicolay" class="hide-mobile">
+    </div>
+
+    <div class="team-member right">
+        <img src="https://www.bishopmoore.org/staff753_2.jpg" alt="Brian Shields">
+        <div class="info">
+        <h3>Brian Shields</h3>
+        <p class="role">Advancement Officer</p>
+        <p>Brian builds relationships and raises funds by managing a portfolio of donors, identifying prospects, and soliciting gifts with a focus on cultivation, stewardship, and achieving fundraising goals.</p>
+      </div>
+    </div>
+
+    <div class="team-member left">
+      <img src="https://www.bishopmoore.org/staff864_2.jpg" alt="Colby Stempkowski" class="hide-desktop">
+      <div class="info">
+        <h3>Colby Stempkowski '21</h3>
+        <p class="role">Alumni Relations & Gift Specialist</p>
+        <p>Colby supports alumni events, manages social media communications, oversees database management, and assists with constituent communications for fundraising and engagement efforts.</p>
+      </div>
+      <img src="https://www.bishopmoore.org/staff864_2.jpg" alt="Colby Stempkowski" class="hide-mobile">
+    </div>
+
+    <div class="team-member right">
+      <img src="https://www.bishopmoore.org/staff142_4.jpg" alt="John Wasman">
+      <div class="info">
+        <h3>John Wasman '80</h3>
+        <p class="role">Events Manager</p>
+        <p>John oversees various BMC events, managing budgets, coordinating logistics, and performing post-event evaluations to ensure alignment with BMC’s goals.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
