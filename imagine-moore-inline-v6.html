@@ -430,6 +430,25 @@ body:not(#sm3_body) main.inside .imagine-moore a.im-button {
   .imagine-moore .campaign-details .price { text-align: left; }
 }
 
+/* Floor section headings and second-floor image captions */
+.imagine-moore .floor-heading {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 750;
+  line-height: 1.15 !important;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+.imagine-moore .vertical-renders figure {
+  margin: 0;
+}
+.imagine-moore .vertical-renders figcaption {
+  margin-top: .35rem;
+  color: var(--muted);
+  font-size: .78rem;
+  text-align: right;
+}
+
 </style>
 
 <div class="imagine-moore">
@@ -501,6 +520,7 @@ body:not(#sm3_body) main.inside .imagine-moore a.im-button {
         <div class="campaign-hero">
           <div>
             <div class="section-head"><span class="eyebrow">Center for the Arts</span><h2 class="im-section-title" id="im-campaign-title">Campaign <strong>Summary</strong></h2></div>
+            <h3 class="floor-heading">First Floor</h3>
             <div class="plan-card"><img class="floor-plan" src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_1st_Floor_FP.png" alt="First-floor architectural plan for the Center for the Arts" loading="lazy"></div>
             <div class="render-grid">
               <figure><img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Auditorium_Render.png" alt="Rendering of the Center for the Arts auditorium" loading="lazy"><figcaption>First-floor auditorium</figcaption></figure>
@@ -527,15 +547,15 @@ body:not(#sm3_body) main.inside .imagine-moore a.im-button {
 
     <section class="section section--soft" aria-labelledby="second-floor-heading">
       <div class="wrap">
-        <div class="section-head"><span class="eyebrow">Expanded learning spaces</span><h2 class="im-section-title" id="im-second-floor-heading">Second <strong>Floor</strong></h2></div>
+        <h3 class="floor-heading" id="im-second-floor-heading">Second Floor</h3>
         <div class="plan-card"><img class="floor-plan" src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_2nd_Floor_FP.png" alt="Second-floor architectural plan for the Center for the Arts" loading="lazy"></div>
         <div class="second-floor second-floor--spaced">
           <div class="vertical-renders">
-            <img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Orchestra_Render.png" alt="Rendering of the orchestra classroom" loading="lazy">
-            <img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Dance_Render.png" alt="Rendering of the dance classroom" loading="lazy">
-            <img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Choir_Render.png" alt="Rendering of the choir classroom" loading="lazy">
+            <figure><img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Orchestra_Render.png" alt="Rendering of the orchestra classroom" loading="lazy"><figcaption>1st Floor Orchestra</figcaption></figure>
+            <figure><img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Dance_Render.png" alt="Rendering of the dance classroom" loading="lazy"><figcaption>1st Floor Dance</figcaption></figure>
+            <figure><img src="https://www.bishopmoore.org/editoruploads/images/Give/CFTA/CFS/CFA_Choir_Render.png" alt="Rendering of the choir classroom" loading="lazy"><figcaption>1st Floor Choir</figcaption></figure>
           </div>
-          <blockquote class="large-quote">“As an educator, and now as Superintendent of Catholic Schools in the Diocese of Orlando, I have seen firsthand how the arts have the same profound impact on our students. A shy student finds her voice through theater, a struggling learner gains confidence with a paintbrush, and a young musician expresses emotions too deep for words. The arts are not just an extracurricular activity; they are a vital part of a child’s formation.”<cite>Dr. Erika Wikstrom<br>Secretary for Education/Superintendent of Catholic Schools, Diocese of Orlando</cite></blockquote>
+          <blockquote class="large-quote">“As an educator, and now as Superintendent of Catholic Schools in the Diocese of Orlando, I have seen firsthand how the arts have the same profound impact on our students — a shy student finds her voice through theater, a struggling learner gains confidence with a paintbrush, and a young musician expresses emotions too deep for words. These moments reaffirm what I have always known— the arts are not just an extracurricular activity; they are a vital part of a child’s formation.”<cite>Dr. Erika Wikstrom<br>Secretary for Education/Superintendent of Catholic Schools, Diocese of Orlando</cite></blockquote>
         </div>
       </div>
     </section>
